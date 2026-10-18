@@ -1,0 +1,16 @@
+{
+  "artifacts": [
+    {
+      "file": "gtceu-st-1.20.1-1.7.1c.jar",
+      "url": "https://edge.forgecdn.net/files/8990/245/gtceu-st-1.20.1-1.7.1c.jar",
+      "size": 18564047,
+      "sha256": "4efe5432b83fb61443550802b3e7ae996fb0d27aa8d11ee129c9912c5597d7a6"
+    },
+    {
+      "file": "ldlib-forge-1.20.1-1.0.52.a.jar",
+      "url": "https://edge.forgecdn.net/files/8830/518/ldlib-forge-1.20.1-1.0.52.a.jar",
+      "size": 3125867,
+      "sha256": "a9b0827d264e0d15f90482de0d4783a28fc2dad9dfb477f344dc5e959168838d"
+    }
+  ]
+}

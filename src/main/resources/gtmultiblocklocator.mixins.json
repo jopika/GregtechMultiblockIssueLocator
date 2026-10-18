@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "io.github.jopika.gtmultiblocklocator.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "gtmultiblocklocator.refmap.json",
+  "client": ["ComponentPanelWidgetMixin"],
+  "injectors": {"defaultRequire": 1}
+}

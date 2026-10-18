@@ -1,0 +1,14 @@
+.gradle/
+.local/
+build/
+libs/*.jar
+run/
+run-server/
+*.log
+logs/
+__pycache__/
+
+# Local agent guidance, planning, and reverse-engineering notes
+/AGENTS.md
+/.agents/
+/.codex/
