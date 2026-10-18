@@ -8,7 +8,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: release-build-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -65,3 +69,19 @@ jobs:
             build/libs/SHA256SUMS
           if-no-files-found: error
           retention-days: 90
+
+      - name: Attach JAR and checksums to GitHub Release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$RELEASE_TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" build/libs/gtmultiblocklocator-*.jar build/libs/SHA256SUMS \
+              --repo "$GH_REPO" --clobber
+          else
+            gh release create "$RELEASE_TAG" build/libs/gtmultiblocklocator-*.jar build/libs/SHA256SUMS \
+              --repo "$GH_REPO" --verify-tag \
+              --title "GregTech Multiblock Locator ${RELEASE_TAG#v}" --generate-notes
+          fi

@@ -63,9 +63,16 @@ in `scripts/verify_artifact.py` together.
 
 The workflow downloads the two pinned compile inputs from CurseForge, verifies
 their SHA-256 hashes, builds with Java 17, runs the feature checks, and verifies
-production packaging. Download the JAR and `SHA256SUMS` from the workflow run's
-artifact. It does not create a GitHub Release. The workflow can also be run
-manually from the Actions tab.
+production packaging. For tag builds, it attaches the JAR and `SHA256SUMS` to the
+matching GitHub Release, creating a release with generated notes if one does not
+exist. Rerunning a tag build replaces assets with the same filenames and retains
+existing release notes.
+
+The JAR and checksum are also available in the workflow run's artifact. The
+workflow can be run manually from the Actions tab: select a version tag to
+publish release assets, or a branch to build an artifact without publishing a
+release. Publishing uses the workflow's `GITHUB_TOKEN` with `contents: write`;
+no additional secret is required.
 
 CI dependency preparation can be run locally with:
 
