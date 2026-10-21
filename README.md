@@ -4,9 +4,25 @@ A client utility mod built for Star Technology that enables players to find erro
 
 
 ## How to use
-For contollers that show the coordinates for an issue, they will now be highlighted in cyan.
 
-Click on the coordinates to highlight the block's position (visible through the wall). The outline will vanish after a brief amount of time (default 5 seconds).
+1. Open the multiblock controller. When it reports an issue with coordinates, those coordinates appear as a cyan link.
+
+   <img src="docs/images/controller-error-coordinates.png" alt="Large Chemical Reactor controller reporting an invalid structure with clickable cyan error coordinates" width="800">
+
+2. Click the coordinates, then close the controller screen.  A red outline marks the reported block position, visible through the multiblock's casing.  
+By default the outline will last 5 seconds after closing the GUI.
+
+   <img src="docs/images/highlight-through-casing.png" alt="Red outline marking the reported block position through the reactor casing" width="800">
+    
+    Top view of the reactor showing the block highlighted in the middle.
+
+   <img src="docs/images/interior-error-highlighted.png" alt="Red outline identifying the reported block position inside the reactor" width="800">
+
+    Looking inside we can see that the block is the wrong type (should be a PTFE Pipe block).
+
+   <img src="docs/images/interior-error-before-highlight.png" alt="Interior of the reactor before highlighting, with the error position difficult to distinguish" width="800">
+
+After making a repair, check the controller again for any remaining errors and click the updated coordinates if there is a new error.
 
 ## Installation
 
