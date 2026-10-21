@@ -93,7 +93,7 @@ def main():
                 if path.is_file():
                     jar.write(path, str(path.relative_to(directory)))
         jar.write(ROOT / 'LICENSE', 'LICENSE')
-    output = ROOT / 'build/libs/gtmultiblocklocator-1.0.0.jar'
+    output = ROOT / 'build/libs/gtmultiblocklocator-1.0.1.jar'
     output.parent.mkdir(parents=True, exist_ok=True)
     command = [str(java_home / 'bin/java'), '-jar', str(tool), '--input', str(dev_jar), '--output', str(output),
                '--names', str(mappings), '--threads', '2']

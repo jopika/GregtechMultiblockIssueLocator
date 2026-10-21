@@ -3,7 +3,7 @@ loaderVersion="[47,)"
 license="MIT"
 [[mods]]
 modId="gtmultiblocklocator"
-version="1.0.0"
+version="1.0.1"
 displayName="GregTech Multiblock Locator"
 authors="Jopika"
 description='''Click reported GregTech multiblock error coordinates to show a temporary through-wall outline after closing the GUI.'''

@@ -17,7 +17,7 @@ REFMAP = 'gtmultiblocklocator.refmap.json'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('jar', type=Path, nargs='?', default=ROOT / 'build/libs/gtmultiblocklocator-1.0.0.jar')
+    parser.add_argument('jar', type=Path, nargs='?', default=ROOT / 'build/libs/gtmultiblocklocator-1.0.1.jar')
     parser.add_argument('--java-home', type=Path)
     args = parser.parse_args()
     javap = str(args.java_home / 'bin/javap') if args.java_home else 'javap'
@@ -33,7 +33,7 @@ def main():
         assert json.loads(jar.read('pack.mcmeta'))['pack']['pack_format'] == 15
         metadata = tomllib.loads(jar.read('META-INF/mods.toml').decode())
         assert metadata['mods'][0]['modId'] == 'gtmultiblocklocator'
-        assert metadata['mods'][0]['version'] == '1.0.0'
+        assert metadata['mods'][0]['version'] == '1.0.1'
         assert metadata['mods'][0]['displayTest'] == 'IGNORE_ALL_VERSION'
         dependencies = metadata['dependencies']['gtmultiblocklocator']
         assert {d['modId'] for d in dependencies} == {'minecraft', 'forge', 'gtceu', 'ldlib'}

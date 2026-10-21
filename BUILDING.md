@@ -30,7 +30,7 @@ addon JAR.
 
 The build runs 55 feature checks and verifies production packaging, mappings,
 client placement, and dependency exclusions. The production JAR is written to
-`build/libs/gtmultiblocklocator-1.0.0.jar`. To verify it separately:
+`build/libs/gtmultiblocklocator-1.0.1.jar`. To verify it separately:
 
 ```sh
 python3 scripts/verify_artifact.py
