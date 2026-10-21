@@ -28,7 +28,7 @@ After making a repair, check the controller again for any remaining errors and c
 
 This has been built and is tested on the Star Technology Theta 2 version. Other versions should work, but have not been verified!
 
-1. Download the mod jar file from the releases tab.
+1. Download the mod jar file from the [releases](https://github.com/jopika/GregtechMultiblockIssueLocator/releases) tab.
 1. Make sure Minecraft is closed, and place the jar file in the `mods` directory.
 
 ## Configuration
